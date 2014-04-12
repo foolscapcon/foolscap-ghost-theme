@@ -91,3 +91,14 @@
   jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
 })(jQuery,'smartresize');
+
+(function($) {
+    // Scroll-past behavior
+    $(document).on('click', '[data-role=scroll-to]', function() {
+        var targetSelector = $(this).attr('data-target'),
+            targetElem = targetSelector ? $(targetSelector) : null;
+        if (targetElem) {
+            $('html,body').animate({ scrollTop: targetElem.offset().top });
+        }
+    });
+})(jQuery);

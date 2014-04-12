@@ -879,6 +879,11 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 1.1rem;
 }
 
+/* scroll-to */
+[data-role=scroll-to] {
+    cursor: pointer;
+}
+
 
 /* ==========================================================================
    8. Pagination - Tools to let you flick between pages
