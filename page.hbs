@@ -3,30 +3,33 @@
 {{! This is a page template. A page outputs content just like any other post, and has all the same
     attributes by default, but you can also customise it to behave differently if you prefer. }}
 
-<main class="content" role="main">
-
-    <article class="{{post_class}}">
-
-        <header class="post-header">
-            <a class="blog-logo" href="{{@blog.url}}">
+{{! Each post has the blog logo at the top, with a link back to the home page }}
+    <header class="site-head">
+        <div class="vertical">
+            <div class="site-head-content inner">
                 {{#if @blog.logo}}
-                    <img src="{{@blog.logo}}" alt="Blog Logo" />
+                    <a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
                 {{else}}
-                    <span class="blog-title">{{@blog.title}}</span>
+                    <h1 class="blog-title">{{@blog.title}}</h1>
                 {{/if}}
-            </a>
-        </header>
-
+                <div class="head-info">{{> headInfo}}</div>
+            </div>
+        </div>
+    </header>
+<div class="topnav_anchor"></div>
+<nav class="topnav">
+    <div class="inner">
+        <img class="minilogo" src="{{asset 'images/littlePurpleF.png'}}" />
+        {{> topnav}}
+    </div>
+</nav>
+<main class="content" role="main">
+    <article class="{{post_class}}">
         {{#post}}
-
             <h1 class="post-title">{{{title}}}</h1>
-
             <section class="post-content">
                 {{content}}
             </section>
-
         {{/post}}
-
     </article>
-
 </main>
