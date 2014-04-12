@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Heuristica";
+    src: local("Heuristica"), url(../fonts/Heuristica-Regular.otf) format("opentype");
+}
+@font-face {
+    font-family: "Heuristica Bold";
+    src: local("Heuristica Bold"), url(../fonts/Heuristica-Bold.otf) format("opentype");
+}

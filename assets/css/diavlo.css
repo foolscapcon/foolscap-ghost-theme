@@ -1,0 +1,9 @@
+/* A font by Jos Buivenga (exljbris) -> www.exljbris.com */
+@font-face {
+    font-family: "Diavlo Book";
+    src: local("Diavlo Book"), url(../fonts/Diavlo_BOOK_II_37.otf) format("opentype");
+}
+@font-face {
+    font-family: "Diavlo Bold";
+    src: local("Diavlo Bold"), url(../fonts/Diavlo_BOLD_II_37.otf) format("opentype");
+}
