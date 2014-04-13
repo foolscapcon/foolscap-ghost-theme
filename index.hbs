@@ -8,11 +8,7 @@
     <div class="vertical">
       <div class="lozenge" data-role="scroll-to" data-target=".topnav">
         <div class="site-head-content inner">
-            {{#if @blog.logo}}
-              <div class="blog-logo"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></div>
-            {{else}}
-              <h1 class="blog-title">{{@blog.title}}</h1>
-            {{/if}}
+            <div class="blog-logo"><img src="{{asset '/images/logo-full-3col-dark-0300x0100.png'}}" alt="{{@blog.title}}" /></div>
             {{> splashcontent}}
         </div>
       </div>
