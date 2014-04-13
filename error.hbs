@@ -1,0 +1,49 @@
+{{!< default}}
+
+<header class="site-head">
+            <div class="vertical">
+                <div class="site-head-content inner">
+                    {{#if @blog.logo}}
+                        <a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+                    {{else}}
+                        <h1 class="blog-title">{{@blog.title}}</h1>
+                    {{/if}}
+                    <div class="head-info">{{> headInfo}}</div>
+                </div>
+            </div>
+        </header>
+    <div class="topnav_anchor"></div>
+<nav class="topnav">
+    <div class="inner">
+        <img class="minilogo" src="{{asset 'images/logo-init-3col-0040x0050.png'}}" />
+        {{> topnav}}
+    </div>
+</nav>
+
+  <main class="content" role="main" id="main">
+    <section class="error-content error-404 js-error-container">
+      <section class="error-details">
+        <h1>We're sorry!</h1>
+          <section class="error-message">
+            <span class="error-code">{{code}}</span>
+            <span class="error-description">{{message}}</span>
+          </section>
+        </section>
+      </section>
+      {{#if stack}}
+        <section class="error-stack">
+          <h3>Stack Trace</h3>
+          <p><strong>{{message}}</strong></p>
+          <ul class="error-stack-list">
+            {{#foreach stack}}
+              <li>
+                at
+                {{#if function}}<em class="error-stack-function">{{function}}</em>{{/if}}
+                <span class="error-stack-file">({{at}})</span>
+              </li>
+            {{/foreach}}
+          </ul>
+        </section>
+      {{/if}}
+    </article>
+    </main>

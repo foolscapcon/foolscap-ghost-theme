@@ -705,6 +705,25 @@ margin on the iframe, cause it breaks stuff. */
     color: #00B8D0;
 }
 
+.error-content {
+    position: relative;
+    width:80%;
+    max-width: 700px;
+    margin: 4rem auto;
+    word-break: break-word;
+    hyphens: auto;
+    text-align: center;
+}
+.error-message {
+    font-size: 120%;
+}
+.error-code {
+    color: #FFB830;
+    font-family: diavlo;
+    font-weight: 500;
+    padding-right: .5em;
+}
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
