@@ -688,6 +688,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 .topnav ul{
     margin: 0;
+    display: inline-block;
 }
 
 .topnav li{
