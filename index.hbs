@@ -25,23 +25,110 @@
 {{! The main content area on the homepage }}
 <main class="content" role="main">
 
+    {{! This section is the main marketing content.}}
+
+    <article class="post elevator">
+        <b>Foolscap is a new kind of convention.</b> We bring together writers, artists, fans,
+        thinkers and makers to create a weekend-long conversation about the things that excite 
+        us. Everyone is interesting at Foolscap. By bringing together a community of diverse 
+        interests and experiences, we make a space where we all learn from each other.
+    </article>
+    
+    <article class="post" id="ethos">
+        <p class="headline">Foolscap's guiding principles are the "Four 'B's":</p>
+        <div class="hovericons">
+            <a href="#belonging"><img class="magichover activehover" alt="Belonging" src="{{asset '/images/spacer.png'}}" /></a>
+            <a href="#bridges"><img class="magichover" alt="Bridges" src="{{asset '/images/jester.png'}}" /></a>
+            <a href="#brains"><img class="magichover" alt="Brains" src="{{asset '/images/hatlady.png'}}" /></a>
+            <a href="#bravery"><img class="magichover" alt="Bravery" src="{{asset '/images/knight.png'}}" /></a>
+        </div>
+        <div class="hovercontent">
+            <div id="brains">
+                <h2>Brains</h2> 
+                <p>We believe ideas make the best toys. We take them apart to see how they work, and put 
+                them together in new, better ways.</p>
+                <p class="question">What ideas do you want to explore?</p>
+            </div>
+            <div id="belonging">
+                <h2>Belonging</h2>
+                <p>We come together to form a community. We share food and conversation, stories and books. 
+                We welcome you to join us.</p>
+                <p class="question">What makes you feel at home?</p>
+            </div>
+            <div id="bridges">
+               <h2>Bridges</h2>
+               <p>We connect communities by giving them a place to show their most interesting side. 
+                Foolscap fosters the unexpected connections that help communities grow.</p>
+               <p class="question">Who are you hoping to meet?</p>
+            </div>
+            <div id="bravery">
+              <h2>Bravery</h2>
+                <p>We take risks along the way to making things better. If we've been doing something well 
+                for years, then it's time for us to try to do it better. We may stumble, but we'll always learn.</p>
+                <p class="question">How would you make a better community?</p>
+            </div>
+        </div>
+        <p>Our philosophy shapes our convention. <a href="/ethos/">Find out how.</a></p>
+    </article>
+
+    <article class="post" id="goh">
+        <b>This year, our Guest of Honor is Ursula Vernon.</b>
+        <img class="ursulaportrait" style="width: 300px; float: left" alt="Ursula Vernon" src="{{asset '/images/ursula.png'}}" />
+        <p>Ursula is the Hugo-award winning creator of Digger, author of more than a dozen books for children and 
+        adults, a prolific artist and illustrator, and fills a blog with her gardening, birding, role-playing 
+        and short fiction. In her free time, she also records two regular podcasts with her husband, Kevin 
+        Sonney, and runs a backyard haven for defective wildlife.</p>
+    </article>
+
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
 
-    <article class="{{post_class}}">
-        <header class="post-header">
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-
-        </header>
-        <section class="post-excerpt">
-            <p>{{excerpt}}&hellip;</p>
-        </section>
-    </article>
+    {{#has tag="headline, excerpt"}}
+        {{#has tag="headline"}}
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+            </header>
+        </article>
+        {{else}} 
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time></span>
+            </header>
+            <section class="post-excerpt">
+                <p>{{excerpt}}&hellip;</p>
+            </section>
+        </article>
+        {{/has}}
+    {{else}}
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time></span>
+            </header>
+            <section class="post-body">
+                <p>{{content}}</p>
+            </section>
+        </article>
+    {{/has}}
 
     {{/foreach}}
 
     {{!! After all the posts, we have the previous/next pagination links }}
     {{pagination}}
+    
+    <article class="post finalpost" id="calltoaction">
+    <b>We want to hear your voice at Foolscap.</b> To join us, you just need a membership to the convention.
+    
+    <p>Your membership makes you a part of Foolscap; your support keeps the conversation going. What will you
+    shape Foolscap into?</p>
+    
+    We can't wait to find out.
+    </article>
+    
+    <div class="center">
+    <a href="/registration/" class="button">Join the conversation.<br>Get your membership.</a>
+    </div>
 
 </main>

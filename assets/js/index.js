@@ -57,8 +57,22 @@
             // Hide the minilogo
             $('.minilogo').fadeOut('fast');
           }
-      });
-
+        });
+        
+        // Set all the contentDivs for the ethos tabber to the same height and hide all but one.
+        var contentDivs = $('#ethos .hovercontent>div');
+        var height = 0;
+        contentDivs.each(function() {height = Math.max(height, $(this).height());});
+        contentDivs.height(height);
+        contentDivs.filter(':visible').filter(':not(#belonging)').hide();
+        $('#ethos a[href^=#]').click(function(e) {
+          $('#ethos .hovericons img').removeClass('activehover');
+          $('#ethos .hovercontent>div').filter(':visible').hide();
+          $(this).find('img').addClass('activehover');
+          var target = $(this).attr('href');
+          $(target).show();
+          return false;
+        });
 
     });
 

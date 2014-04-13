@@ -724,6 +724,84 @@ margin on the iframe, cause it breaks stuff. */
     padding-right: .5em;
 }
 
+article>b{
+    font-size: 120%;
+}
+
+#ethos .headline, #ethos h2 {
+    text-align: center;
+}
+
+.magichover {
+    width: 170px;
+    height: 170px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background-color: rgba(72,48,144,0.5);
+    transition: background-color ease 0.3s;
+}
+.magichover:hover {
+    background-color: rgba(0,184,208,0.5);
+}
+
+.activehover {
+    background-color: rgba(255,184,48,0.5);
+}
+.activehover:hover {
+    background-color: rgba(255,184,48,0.5);
+}
+
+.hovercontent h2 {
+    font-variant: small-caps;
+    font-weight: bold;
+    font-family: heuristica;
+    font-size: 140%;
+    margin: 0;
+}
+
+.hovercontent p {
+    text-align: left;
+    margin: 0;
+}
+
+.headline {
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.question {
+    padding-top: .5em;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+a.button {
+    text-decoration: none;
+    text-align: center;
+    border-radius: 6px;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: rgb(72,48,144);
+    transition: background-color ease 0.3s;
+    color: #FFF;
+}
+a.button:hover {
+    background-color: rgb(0,184,208);
+}
+
+.center {
+    text-align: center;
+}
+
+.finalpost {
+    border-bottom: none;
+}
+/* Kill that stylish little circle that was on the border, too */
+.finalpost:after {
+    display: none;
+}
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
