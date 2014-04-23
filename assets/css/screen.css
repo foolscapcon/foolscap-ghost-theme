@@ -748,6 +748,8 @@ article>b{
     border-radius: 100%;
     background-color: rgba(72,48,144,0.5);
     transition: background-color ease 0.3s;
+    box-shadow: 2px 2px 4px #000;
+    transition: box-shadow 0.3s;
 }
 .magichover:hover {
     background-color: rgba(0,184,208,0.5);
@@ -755,6 +757,7 @@ article>b{
 
 .activehover {
     background-color: rgba(255,184,48,0.5);
+    box-shadow: none;
 }
 .activehover:hover {
     background-color: rgba(255,184,48,0.5);
@@ -793,6 +796,7 @@ a.button {
     background-color: rgb(72,48,144);
     transition: background-color ease 0.3s;
     color: #FFF;
+    box-shadow: 2px 2px 4px #000;
 }
 a.button:hover {
     background-color: rgb(0,184,208);
@@ -1123,7 +1127,7 @@ a.button:hover {
 /* The RSS icon, inserted via icon font */
 .subscribe:before {
     color: #483090;
-    font-size: 10px;
+    font-size: 15px;
     position: absolute;
     top: 9px;
     left: 9px;

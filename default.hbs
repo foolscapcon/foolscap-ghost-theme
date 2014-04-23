@@ -16,6 +16,7 @@
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.css"}}" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
 
     {{! Ghost outputs important style and meta data with this tag }}
@@ -27,12 +28,13 @@
     {{{body}}}
 
     <footer class="site-footer">
-        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
+        <a class="subscribe fa fa-rss" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
         <div class="inner">
              <section class="socialbar">
-                 <a class="follow icon-twitter" href="https://twitter.com/foolscapcon"></a>
-                 <a class="follow icon-facebook" href="https://www.facebook.com/pages/Foolscap-Convention/102875069751840"></a>
-                 <a class="follow icon-google-plus" href="https://plus.google.com/109265161136196924891" rel="publisher"></a>
+                 <a class="follow fa fa-envelope-o" href="http://foolscap.us1.list-manage.com/subscribe?u=b53b9cb1a532a60b0f4675146&id=f87307be68"></a>
+                 <a class="follow fa fa-twitter" href="https://twitter.com/foolscapcon"></a>
+                 <a class="follow fa fa-facebook" href="https://www.facebook.com/pages/Foolscap-Convention/102875069751840"></a>
+                 <a class="follow fa fa-google-plus" href="https://plus.google.com/109265161136196924891" rel="publisher"></a>
              </section>
              <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
              <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
