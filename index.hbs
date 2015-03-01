@@ -75,6 +75,14 @@
         <p>Our philosophy shapes our convention. <a href="/ethos/">Find out how.</a></p>
     </article>
 
+    <article class="post" id="comingsoon">
+        <p><b>Foolscap is nearly upon us.</b> The weather outside is cold and windy, the days are growing short - and
+        so is the time until Foolscap. We're almost ready to gather for conversation and good company, with panels,
+        dealers, tasty things from hospitality and good books from the Magic Book Box to curl up with. If there's
+        something we can help with before the convention, just <a href="/contact/">get in touch with us</a>. We'd
+        love to hear from you, and we hope to see you soon!</p>
+    </article>
+
     <article class="post" id="goh">
         <b>This year, our Guest of Honor is Ursula Vernon.</b>
         <img class="ursulaportrait" style="width: 300px; float: left" alt="Ursula Vernon" src="{{asset '/images/ursula.png'}}" />
@@ -89,24 +97,24 @@
 
     {{#has tag="headline, excerpt"}}
         {{#has tag="headline"}}
-        <article class="{{post_class}}">
+        <article class="{{post_class}} homepage">
             <header class="post-header">
                 <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
             </header>
         </article>
         {{else}} 
-        <article class="{{post_class}}">
+        <article class="{{post_class}} homepage">
             <header class="post-header">
                 <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
                 <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time></span>
             </header>
             <section class="post-excerpt">
-                <p>{{excerpt}}&hellip;</p>
+                <a href="{{url}}"><p>{{excerpt}}&hellip;</p></a>
             </section>
         </article>
         {{/has}}
     {{else}}
-        <article class="{{post_class}}">
+        <article class="{{post_class}} homepage">
             <header class="post-header">
                 <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
                 <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time></span>

@@ -564,6 +564,17 @@ margin on the iframe, cause it breaks stuff. */
     text-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
 
+.homepage .post-title {
+	font-family: 'heuristica', serif;
+    font-weight: bold;
+    font-size: 2.0rem;
+    font-size: 120%;
+    line-height: 1.6em;
+    display: inline-block;
+	padding-right: .5em;
+	margin-top: 0;
+}
+
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
@@ -608,6 +619,10 @@ margin on the iframe, cause it breaks stuff. */
     margin: 1.6rem 0 0 0;
     font-size: 0.9em;
     line-height: 1.6em;
+}
+
+.post-excerpt a {
+	text-decoration: none;
 }
 
 .post-meta {
