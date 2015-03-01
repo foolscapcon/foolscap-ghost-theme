@@ -51,7 +51,7 @@ This theme is kind of abusing the nature of Ghost. As such, you will need to sat
     	registered. We don't want to ask them to register on the post-registration
     	landing page! (By the way, you'll want to make sure this landing page
     	exists, too.)
-* The footer (defined in <kbd>???</kbd>) also links to a static page that will need to be created within Ghost:
+* The footer (defined at the bottom of <kbd>default.hbs</kbd>) also links to a static page that will need to be created within Ghost:
     * <kbd>/contact</kbd>
 
 Yes, this _is_ a hacked together piece of cruft. So good of you to notice.
