@@ -1,0 +1,39 @@
+{{#get "posts" filter="tags:{{index_tag}}+tags:{{year}}" order="published_at desc"}}
+{{#foreach posts}}
+
+    {{#has tag="headline, excerpt"}}
+        {{#has tag="headline"}}
+        <article class="{{post_class}} homepage">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+            </header>
+        </article>
+        {{else}} 
+        <article class="{{post_class}} homepage">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time></span>
+            </header>
+            <section class="post-excerpt">
+                <a href="{{url}}"><p>{{excerpt}}&hellip;</p></a>
+            </section>
+        </article>
+        {{/has}}
+    {{else}}
+        <article class="{{post_class}} homepage">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time></span>
+            </header>
+            <section class="post-body">
+                <p>{{content}}</p>
+            </section>
+        </article>
+    {{/has}}
+
+    {{/foreach}}
+{{/get}}
+    {{!! After all the posts, we have the previous/next pagination links }}
+    {{pagination}}
+
+<!-- indexPosts before_index done {{index_tag}} {{year}}-->        

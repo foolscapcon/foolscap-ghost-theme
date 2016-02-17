@@ -1,0 +1,10 @@
+{{#get "posts" filter="tags:{{index_tag}}+tags:{{year}}" order="title asc"}}
+{{#foreach posts}}
+  <article class="{{post_class}} homepage">
+  <section class="post-body">
+    <p>{{content}}</p>
+  </section>
+  </article>
+{{/foreach}}
+{{/get}}
+<!-- indexFragment before_index done  {{index_tag}} {{year}}-->        
