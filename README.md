@@ -20,12 +20,12 @@ You'll need to edit the heck out of this to make it usable for other conventions
 
 Assuming you followed the above instructions and now have a local version of the theme:
 
-1. Zip the root <kbd>foolscap</kbd> (or whatever you called it) directory.
-2. Sign in at [ghost.org](https://ghost.org/login/) with the account credentials. These are different than the credentials you use to edit the blog.
-3. Click the settings gear-icon next to the blog you want to update the theme on.
-4. Find the "upload a new theme" button, and use it to upload that zip.
-5. Visit the site and make sure you haven't blown anything up! If you have, you will need to upload a zip from an earlier point. Yes, this is terrible version-control. Test your changes locally before uploading them to avoid sadness.
-
+1. Change the theme
+2. Bump the version number in package.json
+3. run pack.sh to create a zip file
+4. check changes and new zip file in build
+5. Sign in at [ghost.org](https://ghost.org/login/) with the account credentials. These are different than the credentials you use to edit the blog.
+6. upload theme at https://foolscap.ghost.io/ghost/settings/general/
 
 ## Assumptions
 
