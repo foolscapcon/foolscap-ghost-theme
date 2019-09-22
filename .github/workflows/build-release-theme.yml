@@ -10,15 +10,17 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Build Ghost Theme Zip File
+    - name: build
+      description: Build Ghost Theme Zip File
       uses: foolscapcon/action-build-ghost-theme@latest
 
-    - name: Upload files to a GitHub release
+    - name: upload
+      description: Upload files to a GitHub release
       uses: svenstaro/upload-release-action@1.0.1
 
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ${{ outputs.RELEASE_FILE }}
-        asset_name: ${{ outpus.RELEASE_NAME }}
-        tag: ${{ outputs.RELEASE_TAG }}
+        file: ${{ steps.build.outputs.RELEASE_FILE }}
+        asset_name: ${{ steps.build.outputs.RELEASE_NAME }}
+        tag: ${{ steps.build.outputs.RELEASE_TAG }}
 
