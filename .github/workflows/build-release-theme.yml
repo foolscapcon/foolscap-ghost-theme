@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: build
-      uses: foolscapcon/action-build-ghost-theme@v1.0.1
+      uses: foolscapcon/action-build-ghost-theme@latest
 
     - name: upload
       uses: svenstaro/upload-release-action@1.0.1
