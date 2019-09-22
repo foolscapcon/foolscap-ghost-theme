@@ -1,9 +1,15 @@
 #!/bin/sh
-export name=$(cat package.json | python -c "import sys, json; print json.load(sys.stdin)['name']")
-target="build/$name.zip" 
-mkdir -p build
+working=${GITHUB_WORKSPACE:-build}
+name="ghost-theme-$(jq --raw-output '.name' package.json)"
+tag="v$(jq --raw-output '.version' package.json)"
+
+target="${working}/$name.zip" 
+mkdir -p "${working}"
 if [ -e $target ]; then
     rm $target
 fi
-zip $target -r * -x \*build\* -x \*.git\* -x \*~
+zip $target -r * -x \*${working}\* -x \*.git\* -x \*~
+export RELEASE_FILE="$target"
+export RELEASE_NAME="$name"
+export RELEASE_TAG="$tag"
 

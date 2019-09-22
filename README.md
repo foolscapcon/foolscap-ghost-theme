@@ -1,3 +1,4 @@
+![](https://github.com/foolscapcon/foolscap-ghost-theme/workflows/.github/workflows/build-release-theme.yml/badge.svg)
 # Foolscap 
 
 The [Foolscap](http://www.foolscap.org) convention theme for [Ghost](http://github.com/tryghost/ghost/).
