@@ -9,15 +9,10 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+
     - name: Build Ghost Theme Zip File
-      uses: foolscapcon/action-build-ghost-theme@v1.0.0
-      outputs:
-        release_file:
-          description: 'theme zip filename'
-        release_name:
-          description: 'theme filename sans extension'
-        release_tag:
-          description: 'theme release tag'      
+      uses: foolscapcon/action-build-ghost-theme@latest
+
     - name: Upload files to a GitHub release
       uses: svenstaro/upload-release-action@1.0.1
 
