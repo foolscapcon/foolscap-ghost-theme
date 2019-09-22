@@ -1,4 +1,4 @@
-name: CI
+name: Build and Release Ghost Theme
 
 on: [push]
 
@@ -11,7 +11,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build Ghost Theme Zip File
       uses: foolscapcon/action-build-ghost-theme@v1.0.0
-      image: Dockerfile
       outputs:
         release_file:
           description: 'theme zip filename'
