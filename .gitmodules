@@ -1,0 +1,3 @@
+[submodule "submodules/action-build-ghost-theme"]
+	path = submodules/action-build-ghost-theme
+	url = https://github.com/foolscapcon/action-build-ghost-theme
