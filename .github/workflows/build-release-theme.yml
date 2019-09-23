@@ -14,8 +14,9 @@ jobs:
     - name: build
       id: build
       uses: foolscapcon/action-build-ghost-theme@v1.0.8
+
     - name: examine-job
-      run: echo "${{ toJson(jobs.build-and-release.steps.working-directory) }}"
+      run: echo "${{ toJson(job) }}"
     - name: examine0
       run: echo "${{ toJson(steps) }}"
     - name: examine1
