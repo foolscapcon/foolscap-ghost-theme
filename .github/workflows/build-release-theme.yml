@@ -12,16 +12,17 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: build
-      uses: foolscapcon/action-build-ghost-theme@v1.0.6
+      id: build
+      uses: foolscapcon/action-build-ghost-theme@v1.0.7
 
     - name: examine
-      run: echo ${{ toJson(steps) }}; echo ${{ steps.build }}; echo ${{ steps.build.outputs }}; echo ${{ steps.build.outputs.file }}; echo ${{ steps.build.outputs.name }}
+      run: echo ${{ toJson(steps) }}; echo ${{ toJson(steps.build) }}; echo ${{ toJson(steps.build.outputs) }}; echo ${{ steps.build.outputs.release_file }}; echo ${{ steps.build.outputs.release_name }}
 
     - name: artifact
       uses: actions/upload-artifact@master
       with:
-        path: ${{ steps.build.outputs.file }}
-        name: ${{ steps.build.outputs.name }}
+        path: ${{ steps.build.outputs.release_file }}
+        name: ${{ steps.build.outputs.release_name }}
 
     - name: upload
       uses: svenstaro/upload-release-action@1.0.1
