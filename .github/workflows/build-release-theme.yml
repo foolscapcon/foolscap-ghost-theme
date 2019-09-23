@@ -7,18 +7,23 @@ jobs:
     name: Build and Release Ghost Theme
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v1
 
     - name: build
       uses: foolscapcon/action-build-ghost-theme@v1.0.6
 
+    - name: artifact
+      uses: actions/upload-artifact@master
+      with:
+        path: ${{ steps.build.outputs.file }}
+        name: ${{ steps.build.outputs.name }}
+
     - name: upload
       uses: svenstaro/upload-release-action@1.0.1
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: ${{ steps.build.outputs.file }}
         asset_name: ${{ steps.build.outputs.name }}
         tag: ${{ steps.build.outputs.tag }}
-
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
