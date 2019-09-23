@@ -11,10 +11,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: build
+    - name: Build Ghost Theme
+      id: build
       uses: foolscapcon/action-build-ghost-theme@v1.0.2
 
-    - name: upload
+    - name: Upload Theme Zip File to Release
+      id: upload
       uses: svenstaro/upload-release-action@1.0.1
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
