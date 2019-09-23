@@ -16,15 +16,15 @@ jobs:
       uses: foolscapcon/action-build-ghost-theme@v1.0.7
 
     - name: examine0
-      run: echo ${{ toJson(steps) }}
+      run: echo "${{ toJson(steps) }}"
     - name: examine1
-      run:  echo ${{ toJson(steps.build) }}
+      run:  echo "${{ toJson(steps.build) }}"
     - name: examine2
-      run:  echo ${{ toJson(steps.build.outputs) }}
+      run:  echo "${{ toJson(steps.build.outputs) }}"
     - name: examine3
-      run:  echo ${{ steps.build.outputs.release_file }}
+      run:  echo "${{ steps.build.outputs.release_file }}"
     - name: examine4
-      run:  echo ${{ steps.build.outputs.release_name }}
+      run:  echo "${{ steps.build.outputs.release_name }}"
 
     - name: artifact
       uses: actions/upload-artifact@master
