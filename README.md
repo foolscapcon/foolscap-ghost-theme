@@ -5,7 +5,10 @@ The [Foolscap](http://www.foolscap.org) convention theme for [Ghost](http://gith
 
 Based loosely on Casper.
 
-You'll need to edit the heck out of this to make it usable for other conventions, but we'd love to see the results if you do. 
+You'll need to edit the heck out of this to make it usable for other
+conventions, but we'd love to see the results if you do. Shell script
+to build theme is now at
+submodules/action-build-ghost-theme/entrypoint.sh.
 
 ## How To Edit This Theme
 
@@ -21,12 +24,19 @@ You'll need to edit the heck out of this to make it usable for other conventions
 
 Assuming you followed the above instructions and now have a local version of the theme:
 
-1. Change the theme
-2. Bump the version number in package.json
-3. run pack.sh to create a zip file
-4. check changes and new zip file in build
-5. Sign in at [ghost.org](https://ghost.org/login/) with the account credentials. These are different than the credentials you use to edit the blog.
-6. upload theme at https://foolscap.ghost.io/ghost/settings/general/
+1. Fork the theme from https://github.com/foolscapcon/foolscap-ghost-theme
+2. Change the theme
+3. Bump the version number in package.json (both name and version, format is 0.<foolscap year>.<sequential version number>)
+4. check changes in
+5. push changes to your fork
+6. create a pull request
+7. approve pull request - zip file will be built with GitHub Actions
+8. download zip file from release page https://github.com/foolscapcon/foolscap-ghost-theme/releases/latest
+9. Sign in at [ghost.org](https://ghost.org/login/) with the account credentials. These are different than the credentials you use to edit the blog.
+10. upload theme at https://foolscap.ghost.io/ghost/settings/general/
+11. activate theme
+12. verify changes
+
 
 ## Assumptions
 
