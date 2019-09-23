@@ -15,11 +15,7 @@ jobs:
       uses: foolscapcon/action-build-ghost-theme@v1.0.6
 
     - name: examine
-      run: echo ${{ steps }}
-      run: echo ${{ steps.build }}
-      run: echo ${{ steps.build.outputs }}
-      run: echo ${{ steps.build.outputs.file }}
-      run: echo ${{ steps.build.outputs.name }}
+      run: echo ${{ steps }}; echo ${{ steps.build }}; echo ${{ steps.build.outputs }}; echo ${{ steps.build.outputs.file }}; echo ${{ steps.build.outputs.name }}
 
     - name: artifact
       uses: actions/upload-artifact@master
