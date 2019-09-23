@@ -7,20 +7,46 @@ jobs:
     name: Build and Release Ghost Theme
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v1
 
     - name: Build Ghost Theme
       id: build
-      uses: foolscapcon/action-build-ghost-theme@v1.0.2
+      uses: foolscapcon/action-build-ghost-theme@v1.0.8
+
+    - name: examine-job
+      run: echo "${{ toJson(job) }}"
+    - name: examine0
+      run: echo "${{ toJson(steps) }}"
+    - name: examine1
+      run:  echo "${{ toJson(steps.build) }}"
+    - name: examine2
+      run:  echo "${{ toJson(steps.build.outputs) }}"
+    - name: examine3
+      run:  echo "${{ steps.build.outputs.release_file }}"
+    - name: examine4
+      run:  echo "${{ steps.build.outputs.release_name }}"
+    - name: examine5
+      run:  ls -al ${GITHUB_WORKSPACE}
+    - name: examine6
+      run:  echo "${GITHUB_WORKSPACE}"
+    - name: examine7
+      run:  ls -al "${GITHUB_WORKSPACE}/${{ steps.build.outputs.release_name }}.zip"
+    - name: examine8
+      run:  ls -al "${{ steps.build.outputs.release_name }}.zip"
+
+    - name: artifact
+      uses: actions/upload-artifact@master
+      with:
+        path: ${{ steps.build.outputs.release_name }}.zip
+        name: ${{ steps.build.outputs.release_name }}.zip
 
     - name: Upload Theme Zip File to Release
       id: upload
       uses: svenstaro/upload-release-action@1.0.1
       with:
+        file: ${{ steps.build.outputs.release_name }}.zip
+        asset_name: ${{ steps.build.outputs.release_name }}.zip
+        tag: ${{ steps.build.outputs.release_tag }}
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ${{ steps.build.outputs.RELEASE_FILE }}
-        asset_name: ${{ steps.build.outputs.RELEASE_NAME }}
-        tag: ${{ steps.build.outputs.RELEASE_TAG }}
-
