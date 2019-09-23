@@ -33,22 +33,17 @@ jobs:
       run:  echo "${GITHUB_WORKSPACE}"
     - name: examine7
       run:  ls -al "${GITHUB_WORKSPACE}/${{ steps.build.outputs.release_name }}.zip"
-    - name: examine8
-      run:  ls -al "${GITHUB_WORKSPACE}/${{ steps.build.outputs.release_file }}"
-    - name: examine9
-      run:  ls -al ${{ steps.build.outputs.release_file }}
-
 
     - name: artifact
       uses: actions/upload-artifact@master
       with:
-        path: ${{ steps.build.outputs.release_file }}
-        name: ${{ steps.build.outputs.release_name }}
+        path: ${GITHUB_WORKSPACE}/${{ steps.build.outputs.release_name }}.zip
+        name: ${{ steps.build.outputs.release_name }}.zip
 
     - name: upload
       uses: svenstaro/upload-release-action@1.0.1
       with:
-        file: ${{ steps.build.outputs.file }}
-        asset_name: ${{ steps.build.outputs.name }}
+        file: ${GITHUB_WORKSPACE}/${{ steps.build.outputs.release_name }}.zip
+        asset_name: ${{ steps.build.outputs.release_name }}.zip
         tag: ${{ steps.build.outputs.tag }}
         repo_token: ${{ secrets.GITHUB_TOKEN }}
