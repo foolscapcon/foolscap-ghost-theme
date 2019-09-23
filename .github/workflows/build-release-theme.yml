@@ -34,7 +34,7 @@ jobs:
     - name: examine7
       run:  ls -al "${GITHUB_WORKSPACE}/${{ steps.build.outputs.release_name }}.zip"
     - name: examine8
-      run:  ls -al "${{ steps.build.outputs.release_name }}.zip"      
+      run:  ls -al "${{ steps.build.outputs.release_name }}.zip"
 
     - name: artifact
       uses: actions/upload-artifact@master
@@ -47,5 +47,5 @@ jobs:
       with:
         file: ${{ steps.build.outputs.release_name }}.zip
         asset_name: ${{ steps.build.outputs.release_name }}.zip
-        tag: ${{ steps.build.outputs.tag }}
+        tag: ${{ steps.build.outputs.release_tag }}
         repo_token: ${{ secrets.GITHUB_TOKEN }}
