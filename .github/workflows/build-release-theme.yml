@@ -28,6 +28,12 @@ jobs:
     - name: examine5
       run:  ls -al ${GITHUB_WORKSPACE}
     - name: examine6
+      run:  echo "${GITHUB_WORKSPACE}"
+    - name: examine7
+      run:  ls -al "${GITHUB_WORKSPACE}/${{ steps.build.outputs.release_name }}.zip"
+    - name: examine8
+      run:  ls -al "${GITHUB_WORKSPACE}/${{ steps.build.outputs.release_file }}"
+    - name: examine9
       run:  ls -al ${{ steps.build.outputs.release_file }}
 
 
