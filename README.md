@@ -33,7 +33,7 @@ Assuming you followed the above instructions and now have a local version of the
 7. approve pull request - zip file will be built with GitHub Actions
 8. download zip file from release page https://github.com/foolscapcon/foolscap-ghost-theme/releases/latest
 9. Sign in at [ghost.org](https://ghost.org/login/) with the account credentials. These are different than the credentials you use to edit the blog.
-10. upload theme at https://foolscap.ghost.io/ghost/settings/general/
+10. upload theme at https://foolscap.ghost.io/ghost/#/settings/design
 11. activate theme
 12. verify changes
 
