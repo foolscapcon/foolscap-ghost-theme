@@ -13,7 +13,7 @@ jobs:
 
     - name: build
       id: build
-      uses: foolscapcon/action-build-ghost-theme@v1.0.7
+      uses: foolscapcon/action-build-ghost-theme@v1.0.8
 
     - name: examine0
       run: echo "${{ toJson(steps) }}"
@@ -25,6 +25,9 @@ jobs:
       run:  echo "${{ steps.build.outputs.release_file }}"
     - name: examine4
       run:  echo "${{ steps.build.outputs.release_name }}"
+    - name: examine5
+      run:  ls -al ${{ steps.build.outputs.release_file }}
+
 
     - name: artifact
       uses: actions/upload-artifact@master
