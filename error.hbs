@@ -1,49 +1,63 @@
-{{!< default}}
+{{!--
+This error template is used for all 400/500 errors, except 404, which might occur on your site.
+It's a good idea to keep this template as minimal as possible in terms of both file size and complexity.
+You'll notice that we *don't* use any JavsScript, or ghost_head / ghost_foot in this file.
+--}}
 
-<header class="site-head">
-            <div class="vertical">
-                <div class="site-head-content inner">
-                    {{#if @blog.logo}}
-                        <a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+</head>
+<body class="error-template">
+    <div class="site-wrapper">
+
+        <header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-image{{/if}}">
+            <div class="inner">
+                <nav class="site-nav-center">
+                    {{#if @site.logo}}
+                        <a class="site-nav-logo" href="{{@site.url}}"><img src="{{img_url @site.logo size="xs"}}" alt="{{@site.title}}" /></a>
                     {{else}}
-                        <h1 class="blog-title">{{@blog.title}}</h1>
+                        <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
                     {{/if}}
-                    <div class="head-info">{{> headInfo}}</div>
-                </div>
+                </nav>
             </div>
         </header>
-    <div class="topnav_anchor"></div>
-<nav class="topnav">
-    <div class="inner">
-        <img class="minilogo" src="{{asset 'images/logo-init-3col-0040x0050.png'}}" />
-        {{> topnav}}
-    </div>
-</nav>
 
-  <main class="content" role="main" id="main">
-    <section class="error-content error-404 js-error-container">
-      <section class="error-details">
-        <h1>We're sorry!</h1>
-          <section class="error-message">
-            <span class="error-code">{{code}}</span>
-            <span class="error-description">{{message}}</span>
-          </section>
-        </section>
-      </section>
-      {{#if stack}}
-        <section class="error-stack">
-          <h3>Stack Trace</h3>
-          <p><strong>{{message}}</strong></p>
-          <ul class="error-stack-list">
-            {{#foreach stack}}
-              <li>
-                at
-                {{#if function}}<em class="error-stack-function">{{function}}</em>{{/if}}
-                <span class="error-stack-file">({{at}})</span>
-              </li>
-            {{/foreach}}
-          </ul>
-        </section>
-      {{/if}}
-    </article>
-    </main>
+        <main id="site-main" class="site-main outer">
+            <div class="inner">
+
+                <section class="error-message">
+                    <h1 class="error-code">{{statusCode}}</h1>
+                    <p class="error-description">{{message}}</p>
+                    <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
+                </section>
+
+                {{#if errorDetails}}
+                <section class="error-stack">
+                    <h3>Theme errors</h3>
+                    <ul class="error-stack-list">
+                        {{#foreach errorDetails}}
+                            <li>
+                                <em class="error-stack-function">{{{rule}}}</em>
+
+                                {{#foreach failures}}
+                                    <p><span class="error-stack-file">Ref: {{ref}}</span></p>
+                                    <p><span class="error-stack-file">Message: {{message}}</span></p>
+                                {{/foreach}}
+                            </li>
+                        {{/foreach}}
+                    </ul>
+                </section>
+                {{/if}}
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>
