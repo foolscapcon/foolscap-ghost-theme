@@ -1,6 +1,9 @@
 name: Build and Release Ghost Theme
 
-on: [push]
+on:
+  push:
+    branches:    
+      - master 
 
 jobs:
   build-and-release:
