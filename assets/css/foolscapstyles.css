@@ -91,10 +91,17 @@
     background: #483090;
 }
 
+.site-main {
+    background: #FFFBF2;
+    background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+}
+
 html {
     height: 100%;
     max-height: 100%;
     font-size: 62.5%;
+    background: #FFFBF2;
+    background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
 }
 
 body {
@@ -121,6 +128,23 @@ body {
     text-shadow: none;
 }
 
+.post-full-content h1,
+.post-full-content h2,
+.post-full-content h3,
+.post-full-content h4,
+.post-full-content h5,
+.post-full-content h6 {
+    color: unset;
+    text-rendering: optimizeLegibility;
+    line-height: unset;
+    margin-top: unset;
+    letter-spacing: unset;
+    text-indent: unset;
+	font-size: unset;
+    font-family: 'diavlo', sans-serif;
+    font-weight: normal;
+}
+
 h1, h2, h3,
 h4, h5, h6 {
     text-rendering: optimizeLegibility;
@@ -130,33 +154,33 @@ h4, h5, h6 {
     font-weight: normal;
 }
 
-h1 {
+.post-full-content h1, h1 {
     font-size: 4.5rem;
     line-height: 1.2em;
     letter-spacing: -1px;
     text-indent: -2px;
 }
 
-h2 {
+.post-full-content h2, h2 {
     font-size: 3.5rem;
-    line-height: 1.0em;
+    line-height: 1.2em;
     letter-spacing: 0px;
     text-indent: -2px;
 }
 
-h3 {
+.post-full-content h3, h3 {
     font-size: 3.0rem;
 }
 
-h4 {
+.post-full-content h4, h4 {
     font-size: 2.5rem;
 }
 
-h5 {
+.post-full-content h5, h5 {
     font-size: 2.0rem;
 }
 
-h6 {
+.post-full-content h6, h6 {
     font-size: 1.5rem;
 }
 
@@ -292,6 +316,57 @@ kbd {
         0 1px 0 0 #fff inset;
 }
 
+/* Tables */
+.post-full-content table {
+    font-family: unset;
+    font-size: unset;
+    background: unset;
+    background-attachment: unset;
+    background-size: unset;
+    background-repeat: unset;
+    -webkit-overflow-scrolling: unset;
+    display: unset;
+    overflow-x: unset;
+    margin: unset;
+    max-width: 100%;
+    width: 100%;
+    border-spacing: unset;
+    border-collapse: unset;
+}
+
+.post-full-content table td:first-child {
+    background: unset;
+    background-image: unset;
+    background-size: unset;
+    background-repeat: unset;
+}
+
+.post-full-content table td:last-child {
+    background-image: unset;
+    background-position: unset;
+    background-size: unset;
+    background-repeat: unset;
+}
+
+.post-full-content table th {
+    color: unset;
+    font-size: unset;
+    font-weight: unset;
+    letter-spacing: unset;
+    text-align: left;
+    text-transform: unset;
+    background-color: unset;
+}
+
+.post-full-content table th,
+.post-full-content table td {
+    border: unset;
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+}
+
 table {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -324,16 +399,6 @@ table thead:first-child tr:first-child td {
 table tbody + tbody { border-top: 2px solid #efefef; }
 
 table table table { background-color: #fff; }
-
-table tbody > tr:nth-child(odd) > td,
-table tbody > tr:nth-child(odd) > th {
-    background-color: #f6f6f6;
-}
-
-table.plain tbody > tr:nth-child(odd) > td,
-table.plain tbody > tr:nth-child(odd) > th {
-   background: transparent;
-}
 
 iframe, .fluid-width-video-wrapper {
     display: block;
@@ -401,8 +466,8 @@ margin on the iframe, cause it breaks stuff. */
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    width:80%;
-    max-width: 700px;
+    /* width:80%; */
+    /* max-width: 700px; */
     margin: 4rem auto;
     padding-bottom: 4rem;
     border-bottom: #00b8d0 1px solid;
@@ -662,6 +727,21 @@ a.button:hover {
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
+.post-template .site-main,
+.page-template .site-main {
+	background: #FFFBF2;
+	background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+}
+
+.post-full-header {
+    padding: unset;
+}
+
+.post-full-content {
+    padding: unset;
+	background: #FFFBF2;
+	background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+}
 
 
 /* Stop .full-img from creating horizontal scroll - slight hack due to
@@ -675,6 +755,8 @@ a.button:hover {
     margin-top: 0;
     border-bottom: none;
     padding-bottom: 0;
+    background: #FFFBF2;
+    background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
 }
 
 /* Kill that stylish little circle that was on the border, too */
