@@ -87,6 +87,21 @@
 	background-image: none;
 }
 
+.site-nav-logo {
+    color: #BBC7CC;
+    font-family: 'diavlo', sans-serif;
+    font-size: 2.0rem;
+    line-height: 2.0rem;
+    padding: 10px 0px 8px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.site-nav-logo:hover {
+    text-decoration: none;
+	color: #FFF;
+}
+
 .site-nav-main {
     color: #BBC7CC;
     background: #483090;
@@ -164,26 +179,26 @@ h4, h5, h6 {
 }
 
 .post-full-content h2, h2 {
-    font-size: 3.5rem;
+    font-size: 3.0rem;
     line-height: 1.2em;
     letter-spacing: 0px;
-    text-indent: -2px;
+    text-indent: -1px;
 }
 
 .post-full-content h3, h3 {
-    font-size: 3.0rem;
-}
-
-.post-full-content h4, h4 {
     font-size: 2.5rem;
 }
 
-.post-full-content h5, h5 {
+.post-full-content h4, h4 {
     font-size: 2.0rem;
 }
 
-.post-full-content h6, h6 {
+.post-full-content h5, h5 {
     font-size: 1.5rem;
+}
+
+.post-full-content h6, h6 {
+    font-size: 1.0rem;
 }
 
 a {
@@ -230,7 +245,7 @@ dl dd {
 hr {
     display: block;
     height: 1px;
-    border: 0;
+    border: 1px;
     border-top: 1px solid #483090;
     margin: 3.2em 0;
     padding: 0;
@@ -369,6 +384,10 @@ kbd {
     vertical-align: top;
 }
 
+.post-full-content hr:after {
+    display: none;
+}
+
 table {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -437,9 +456,19 @@ margin on the iframe, cause it breaks stuff. */
 /* Creates a responsive wrapper that makes our content scale nicely */
 .inner {
     position: relative;
-    width: 80%;
-    max-width: 700px;
-    margin: 0 auto;
+    width: 96%;
+    max-width: 900px;
+    margin: 0px auto;
+}
+
+@media (max-width: 950px) {
+	.site-nav-right {
+		display: none;   /* <-- this does't work */
+		visibility: hidden;
+		width: 0px;
+		position: relative;
+		right: 0px;
+	}
 }
 
 /* Centres vertically yo. (IE8+) */
@@ -468,13 +497,13 @@ margin on the iframe, cause it breaks stuff. */
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    /* width:80%; */
-    /* max-width: 700px; */
+    width:80%;
+    max-width: 700px;
     margin: 4rem auto;
     padding-bottom: 4rem;
     border-bottom: #00b8d0 1px solid;
     word-break: break-word;
-    hyphens: auto;
+    hyphens: manual;
     background: #FFFBF2;
     background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
 }
@@ -486,6 +515,7 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Add a little circle in the middle of the border-bottom on our .post
    just for the lolz and stylepoints. */
+/*
 .post:after {
     display: block;
     content: "";
@@ -498,10 +528,11 @@ margin on the iframe, cause it breaks stuff. */
     margin-left: -5px;
     background: #ffb830;
     background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
-}  -webkit-border-radius: 100%;
+    -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
 }
+*/
 
 .post-title {
     margin:0;
@@ -623,7 +654,7 @@ margin on the iframe, cause it breaks stuff. */
     max-width: 700px;
     margin: 4rem auto;
     word-break: break-word;
-    hyphens: auto;
+    hyphens: manual;
     text-align: center;
 }
 .error-message {
@@ -723,7 +754,7 @@ a.button:hover {
 }
 /* Kill that stylish little circle that was on the border, too */
 .finalpost:after {
-    display: none;
+    /* display: none; */
 }
 
 /* ==========================================================================
@@ -736,7 +767,7 @@ a.button:hover {
 }
 
 .post-full-header {
-    padding: unset;
+    padding: 24px 0px;
 }
 
 .post-full-content {
@@ -763,7 +794,7 @@ a.button:hover {
 
 /* Kill that stylish little circle that was on the border, too */
 .post-template .post:after {
-    display: none;
+    /* display: none; */
 }
 
 /* Insert some mad padding up in the header for better spacing */
@@ -1006,7 +1037,7 @@ a.button:hover {
 
 .site-footer {
     position: relative;
-    margin: 8rem 0 0 0;
+    margin: 4rem 0 0 0;
     padding: 4rem 0;
     border-top: #EBF2F6 1px solid;
     font-size: 1.3rem;
@@ -1326,4 +1357,192 @@ a.button:hover {
         font-size: 1.1rem;
     }
 
+}
+
+/* 7.1. Post Byline
+/* ---------------------------------------------------------- */
+
+.post-full-byline {
+    margin: 20px 0px 12px;
+    padding-top: 0px;
+}
+
+
+/* 7.4. Related posts
+/* ---------------------------------------------------------- */
+
+.read-next {
+    border-bottom: unset;
+    background: unset;
+}
+
+.read-next-feed {
+    display: unset;
+    flex-wrap: unset;
+    margin: unset;
+    padding: unset;
+}
+
+.read-next .post-card {
+    margin: unset;
+    padding: unset;
+}
+
+.read-next .post-card:after {
+    display: unset;
+}
+
+.read-next .post-card-primary-tag {
+    color: unset;
+    opacity: unset;
+}
+
+.read-next .post-card-title {
+    color: unset;
+    opacity: unset;
+    transition: unset;
+}
+
+.read-next .post-card:hover .post-card-image {
+    opacity: unset;
+}
+
+.read-next .post-card-excerpt {
+    color: unset;
+}
+
+.read-next .static-avatar {
+    border-color: unset;
+}
+
+.read-next .post-card-byline-content {
+    color: unset;
+}
+
+.read-next .post-card-byline-content a {
+    color: unset;
+}
+
+.read-next-card {
+    position: unset;
+    flex: unset;
+    display: unset;
+    flex-direction: unset;
+    overflow: unset;
+    margin: unset;
+    padding: unset;
+    background: unset;
+    border-radius: unset;
+}
+
+.read-next-card a {
+    transition: unset;
+}
+
+.read-next-card a:hover {
+    text-decoration: unset;
+}
+
+.read-next-card-header h3 {
+    margin: unset;
+    color: unset;
+    font-size: unset;
+    line-height: unset;
+    font-weight: unset;
+    letter-spacing: unset;
+    text-transform: unset;
+}
+
+.read-next-card-header h3 a {
+    color: unset;
+    font-weight: unset;
+    text-decoration: unset;
+    opacity: unset;
+}
+
+.read-next-card-header h3 a:hover {
+    opacity: unset;
+}
+
+.read-next-card-content {
+    font-size: unset;
+}
+
+.read-next-card-content ul {
+    display: unset;
+    flex-direction: unset;
+    margin: unset;
+    padding: unset;
+    list-style: unset;
+}
+
+.read-next-card-content li {
+    display: unset;
+    flex-direction: unset;
+    align-items: unset;
+    margin: unset;
+    padding: unset;
+    border-bottom: unset;
+}
+
+.read-next-card-content li:last-of-type {
+    padding-bottom: unset;
+    border: unset;
+}
+
+.read-next-card-content h4 {
+    margin: unset;
+    font-size: unset;
+    line-height: unset;
+    font-weight: unset;
+}
+
+.read-next-card-content li a {
+    display: unset;
+    color: unset;
+    opacity: unset;
+}
+
+.read-next-card-content li a:hover {
+    opacity: unset;
+}
+
+.read-next-card-excerpt {
+    overflow: unset;
+    max-width: unset;
+    font-size: unset;
+    line-height: unset;
+    text-overflow: unset;
+}
+
+.read-next-card-meta {
+    margin-top: unset;
+    font-size: unset;
+    line-height: unset;
+    font-weight: unset;
+}
+
+.read-next-card-meta p {
+    margin: unset;
+    color: unset;
+}
+
+.read-next-card-footer {
+    position: unset;
+    margin: unset;
+}
+
+.read-next-card-footer a {
+    padding: unset;
+    border: unset;
+    color: unset;
+    font-size: unset;
+    border-radius: unset;
+    transition: unset;
+}
+
+.read-next-card-footer a:hover {
+    border-color: unset;
+    color: unset;
+    text-decoration: unset;
 }
