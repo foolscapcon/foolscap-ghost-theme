@@ -1359,6 +1359,18 @@ a.button:hover {
 
 }
 
+
+.post-card-large .post-card-excerpt p {
+    font-family: 'heuristica', serif;
+    font-weight: normal;
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+}
+
+.post-card-large .post-card-title {
+	font-size: 4.0rem;
+}
+
 /* 7.1. Post Byline
 /* ---------------------------------------------------------- */
 
