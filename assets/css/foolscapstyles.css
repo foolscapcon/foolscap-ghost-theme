@@ -614,39 +614,6 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 1.5em;
 }
 
-.topnav {
-    width: 100%;
-    background: #483090;
-    color: #FFF;
-    margin-top: 0;
-    text-align: center;
-    z-index: 100;
-}
-.topnav_anchor {
-    height:0;
-    margin:0;
-    padding:0;
-}
-.topnav ul{
-    margin: 0;
-    display: inline-block;
-}
-
-.topnav li{
-    display: inline;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-.topnav a{
-    text-decoration: none;
-    color: #FFF;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.topnav a:hover{
-    color: #00B8D0;
-}
 
 .error-content {
     position: relative;
@@ -1232,6 +1199,16 @@ a.button:hover {
     }
 
 }
+
+/* ==========================================================================
+   11. Media Queries - Smaller than 700px
+   ========================================================================== */
+@media (max-width: 700px) {
+
+    .site-header-background:not(.responsive-header-img) .site-nav:after,
+    .site-nav-main .site-nav:after {
+        background: unset;
+    }
 
 /* ==========================================================================
    11. Media Queries - Smaller than 500px
