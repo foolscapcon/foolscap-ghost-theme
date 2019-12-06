@@ -108,6 +108,14 @@
 	background-image: none;
 }
 
+.site-nav-right {
+	height: unset;
+}
+
+.site-nav {
+	height: unset;
+}
+
 .site-main {
     background: #FFFBF2;
     background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
@@ -121,9 +129,35 @@
 
 .site-nav {
 	width: 100%;
-	overflow: visible;
+	height: 64px;
+	overflow: hidden;
 	display: flex;
 	flex-wrap: wrap;
+}
+
+/* kludge to fake dynamic vertical expansion when menu items wrap */
+@media (max-width: 810px) {
+	.site-nav {
+		height: 104px;
+	}
+	.post-template .site-main,
+	.page-template .site-main {
+		margin-top: 104px;
+	}
+}
+
+@media (max-width: 500px) {
+	.site-nav {
+		height: 144px;
+	}
+	.post-template .site-main,
+	.page-template .site-main {
+		margin-top: 144px;
+	}
+}
+
+.site-nav fixed-nav-active {
+	color: #000;
 }
 
 .site-nav-content {
@@ -486,9 +520,9 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0px auto;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 925px) {
 	.site-nav-right {
-		display: none;   /* <-- this does't work */
+		display: none;   /* <-- this does't work? */
 		visibility: hidden;
 		width: 0px;
 		position: relative;
@@ -1234,6 +1268,30 @@ a.button:hover {
     .site-nav-main .site-nav:after {
         background: unset;
     }
+
+@media (max-width: 700px) {
+    .site-home-header .site-nav {
+        margin-left: -5vw;
+		width: 100vw;
+    }
+	
+    .site-nav-right {
+        display: none;
+		width: 0px;
+    }
+
+/*  original values here
+   .site-nav-main {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .site-nav-left {
+        margin-right: 0;
+        padding-left: 5vw;
+    }
+*/
+}
 
 /* ==========================================================================
    11. Media Queries - Smaller than 500px
