@@ -113,6 +113,31 @@
     background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
 }
 
+.nav {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.site-nav {
+	width: 100%;
+	overflow: visible;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.site-nav-content {
+	width: 100%;
+}
+
+.site-nav-content ul {
+    background: #483090;
+}
+
+.site-nav-content li {
+	display: inline;
+}
+
 html {
     height: 100%;
     max-height: 100%;
@@ -456,7 +481,7 @@ margin on the iframe, cause it breaks stuff. */
 /* Creates a responsive wrapper that makes our content scale nicely */
 .inner {
     position: relative;
-    width: 96%;
+    width: 100%;
     max-width: 900px;
     margin: 0px auto;
 }
