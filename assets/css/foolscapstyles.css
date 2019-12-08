@@ -156,34 +156,45 @@
 	flex-wrap: wrap;
 }
 
+.nav {
+    display: flex;
+    justify-content: center;
+}
+/* Overriding this. Flexbox does it better. */
+@media (max-width: 700px) {
+    .nav li:last-of-type {
+        padding-right: 0px;
+    }
+}
+
 /* kludge to fake dynamic vertical expansion when menu items wrap */
-@media (max-width: 810px) {
+@media (max-width: 740px) {
 	.site-nav {
-		height: 98px;
+		height: 94px;
 	}
 	.post-template .site-main,
 	.page-template .site-main {
-		margin-top: 98px;
+		margin-top: 94px;
 	}
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
 	.site-nav {
-		height: 138px;
+		height: 128px;
 	}
 	.post-template .site-main,
 	.page-template .site-main {
-		margin-top: 138px;
+		margin-top: 128px;
 	}
 }
 
-@media (max-width: 390px) {
+@media (max-width: 345px) {
 	.site-nav {
-		height: 178px;
+		height: 160px;
 	}
 	.post-template .site-main,
 	.page-template .site-main {
-		margin-top: 178px;
+		margin-top: 160px;
 	}
 }
 
@@ -551,13 +562,10 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0px auto;
 }
 
-@media (max-width: 925px) {
+/* This width determined by empirical twiddling. */
+@media (max-width: 860px) {
 	.site-nav-right {
-		display: none;   /* <-- this does't work? */
-		visibility: hidden;
-		width: 0px;
-		position: relative;
-		right: 0px;
+		display: none;
 	}
 }
 
