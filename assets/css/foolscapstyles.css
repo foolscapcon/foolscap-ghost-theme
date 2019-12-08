@@ -81,6 +81,17 @@
    2. General - Setting up some base styles
    ========================================================================== */
 
+.site-logo {
+    max-height: unset;
+    max-width: 60%;
+}
+/* On small screens, let the logo expand more. */
+@media (max-width: 810px) {
+    .site-logo {
+        max-width: 100%;
+    }
+}
+
 .site-header-background {
     color: #FFFFFF;
     background: #483090;
@@ -95,6 +106,11 @@
     padding: 10px 0px 8px;
     font-weight: normal;
     letter-spacing: 1px;
+}
+
+.site-nav-logo img {
+    margin-top: -10px;
+    height: 50px;
 }
 
 .site-nav-logo:hover {
