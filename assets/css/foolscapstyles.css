@@ -126,6 +126,7 @@
 
 .site-nav-right {
 	height: unset;
+	padding-top: 4px;
 }
 
 .site-nav {
@@ -172,6 +173,9 @@
 	.site-nav {
 		height: 94px;
 	}
+	.site-nav-left {
+		height: 160px;
+	}
 	.post-template .site-main,
 	.page-template .site-main {
 		margin-top: 94px;
@@ -182,6 +186,9 @@
 	.site-nav {
 		height: 128px;
 	}
+	.site-nav-left {
+		height: 190px;
+	}
 	.post-template .site-main,
 	.page-template .site-main {
 		margin-top: 128px;
@@ -191,6 +198,9 @@
 @media (max-width: 345px) {
 	.site-nav {
 		height: 160px;
+	}
+	.site-nav-left {
+		height: 225px;
 	}
 	.post-template .site-main,
 	.page-template .site-main {
