@@ -1,6 +1,6 @@
 {
   "name": "foolscap-0-2020-245",
-  "version": "0.2020.245"
+  "version": "0.2020.245",
   "keywords": ["ghost-theme"],
   "engines": {"ghost-api": "v3"},
   "author": {
