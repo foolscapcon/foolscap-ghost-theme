@@ -1,4 +1,17 @@
 {
   "name": "foolscap-0-2020-244",
-  "version": "0.2020.244"
+  "version": "0.2020.244",
+  "keywords": ["ghost-theme"],
+  "engines": {"ghost-api": "v3"},
+  "author": {
+    "name": "Foolscap Web Team",
+    "email": "it@foolscap.org"
+  },
+  "contributors": [{
+    "name": "Jeff Alexander",
+    "email": "it@foolscap.org"
+  },{
+    "name": "Jason Wodicka",
+    "email": "it@foolscap.org"
+  }]
 }

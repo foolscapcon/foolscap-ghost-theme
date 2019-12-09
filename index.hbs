@@ -1,138 +1,99 @@
 {{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
-{{! The big featured header on the homepage, with the site logo and description }}
-<header class="site-head splash" {{#if @blog.cover_image}}style="background-image: url({{@blog.cover_image}})"{{/if}}>
-    <div class="vertical">
-      <div class="lozenge" data-role="scroll-to" data-target=".topnav">
-        <div class="site-head-content inner">
-            <div class="blog-logo"><img src="{{asset '/images/logo-full-3col-dark-0300x0100.png'}}" alt="{{@blog.title}}" /></div>
-            {{> splashcontent}}
+<header class="site-home-header">
+    {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+        <div class="inner">
+            {{> "site-nav"}}
+            <div class="site-header-content">
+                <h1 class="site-title">
+                    {{#if @site.logo}}
+                        <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </h1>
+                <h2 class="site-description">{{@site.description}}</h2>
+            </div>
         </div>
-      </div>
     </div>
 </header>
-<div class="topnav_anchor"></div>
-<nav class="topnav">
-  <div class="inner">
-    <a href="{{@blog.url}}"><img class="minilogo" src="{{asset '/images/logo-init-3col-0040x0050.png'}}" /></a>
-    {{> topnav}}
-  </div>
-</nav>
 
-{{! The main content area on the homepage }}
-<main class="content" role="main">
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer">
+    <div class="inner posts">
 
-    {{! This section is the main marketing content.}}
+        <div class="post-feed">
+            {{#foreach posts}}
 
-    <article class="post elevator">
-        <b>Foolscap is a new kind of convention.</b> We bring together writers, artists, fans,
-        thinkers and makers to create a weekend-long conversation about the things that excite 
-        us. Everyone is interesting at Foolscap. By bringing together a community of diverse 
-        interests and experiences, we make a space where we all learn from each other.
-    </article>
-    <!--article class="post guest-of-honor">
-        We are deeply saddened to announce that due to the passing of
-her husband, Mike Briggs, Patricia Briggs will not be attending
-Foolscap 2017. The Foolscap community extends its heartfelt
-condolences to her and her family.  Personal notes of sympathy can be posted
-at <a href="https://m.facebook.com/story.php?story_fbid=1074418886000413&id=273710646071245">facebook</a>.
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{> "post-card"}}
 
-       <!-- Our 2017 guest of honor was <a href="/guests-of-honor/#2017guestofhonor">Patricia Briggs</a>.
-    </article> -->
-    <article class="post" id="ethos">
-        <p class="headline">Foolscap's guiding principles are the "Four 'B's":</p>
-        <div class="hovericons">
-            <div>
-            <a href="#belonging"><img class="magichover activehover" alt="Belonging" src="{{asset '/images/spacer.png'}}" /></a>
-            <a href="#bridges"><img class="magichover" alt="Bridges" src="{{asset '/images/jester.png'}}" /></a>
-            </div>
-            <div>
-            <a href="#brains"><img class="magichover" alt="Brains" src="{{asset '/images/hatlady.png'}}" /></a>
-            <a href="#bravery"><img class="magichover" alt="Bravery" src="{{asset '/images/knight.png'}}" /></a>
-            </div>
+            {{/foreach}}
         </div>
-        <div class="hovercontent">
-            <div id="brains">
-                <h2>Brains</h2> 
-                <p>We believe ideas make the best toys. We take them apart to see how they work, and put 
-                them together in new, better ways.</p>
-                <p class="question">What ideas do you want to explore?</p>
-            </div>
-            <div id="belonging">
-                <h2>Belonging</h2>
-                <p>We come together to form a community. We share food and conversation, stories and books. 
-                We welcome you to join us.</p>
-                <p class="question">What makes you feel at home?</p>
-            </div>
-            <div id="bridges">
-               <h2>Bridges</h2>
-               <p>We connect communities by giving them a place to show their most interesting side. 
-                Foolscap fosters the unexpected connections that help communities grow.</p>
-               <p class="question">Who are you hoping to meet?</p>
-            </div>
-            <div id="bravery">
-              <h2>Bravery</h2>
-                <p>We take risks along the way to making things better. If we've been doing something well 
-                for years, then it's time for us to try to do it better. We may stumble, but we'll always learn.</p>
-                <p class="question">How would you make a better community?</p>
-            </div>
-        </div>
-        <p>Our philosophy shapes our convention. <a href="/ethos/">Find out how.</a></p>
-    </article>
 
-
-    {{! Each post will be output using this markup }}
-    {{#foreach posts}}
-
-    {{#has tag="headline, excerpt"}}
-        {{#has tag="headline"}}
-        <article class="{{post_class}} homepage">
-            <header class="post-header">
-                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-            </header>
-        </article>
-        {{else}} 
-        <article class="{{post_class}} homepage">
-            <header class="post-header">
-                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-                <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time></span>
-            </header>
-            <section class="post-excerpt">
-                <a href="{{url}}"><p>{{excerpt}}&hellip;</p></a>
-            </section>
-        </article>
-        {{/has}}
-    {{else}}
-        <article class="{{post_class}} homepage">
-            <header class="post-header">
-                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-                <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time></span>
-            </header>
-            <section class="post-body">
-                <p>{{content}}</p>
-            </section>
-        </article>
-    {{/has}}
-
-    {{/foreach}}
-
-    {{!! After all the posts, we have the previous/next pagination links }}
-    {{pagination}}
-    
-    <article class="post finalpost" id="calltoaction">
-    <b>We want to hear your voice at Foolscap.</b> To join us, you just need a membership to the convention.
-    
-    <p>Your membership makes you a part of Foolscap; your support keeps the conversation going. What will you
-    shape Foolscap into?</p>
-    
-    We can't wait to find out.
-    </article>
-    
-    <div class="center">
-    <a href="/registration/" class="button">Join the conversation.<br>Get your membership.</a>
     </div>
-
 </main>
+
+{{> site-header}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+
+    // NOTE: Scroll performance is poor in Safari
+    // - this appears to be due to the events firing much more slowly in Safari.
+    //   Dropping the scroll event and using only a raf loop results in smoother
+    //   scrolling but continuous processing even when not scrolling
+    $(document).ready(function () {
+        
+        var nav = document.querySelector('.site-nav-main .site-nav');
+        var feed = document.querySelector('.post-feed');
+
+        var lastScrollY = window.scrollY;
+        var lastWindowHeight = window.innerHeight;
+        var lastDocumentHeight = $(document).height();
+        var ticking = false;
+
+        function onScroll() {
+            lastScrollY = window.scrollY;
+            requestTick();
+        }
+
+        function onResize() {
+            lastWindowHeight = window.innerHeight;
+            lastDocumentHeight = $(document).height();
+            requestTick();
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(update);
+            }
+            ticking = true;
+        }
+
+        function update() {
+            var trigger = feed.getBoundingClientRect().top + window.scrollY;
+            var progressMax = lastDocumentHeight - lastWindowHeight;
+
+            // show/hide nav
+            // if (lastScrollY >= trigger - 20) {
+            //     nav.classList.add('fixed-nav-active');
+            // } else {
+            //     nav.classList.remove('fixed-nav-active');
+            // }
+            nav.classList.add('fixed-nav-active');
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onResize, false);
+
+        update();
+
+    });
+</script>
+{{/contentFor}}
