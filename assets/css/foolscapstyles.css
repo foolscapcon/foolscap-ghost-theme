@@ -134,8 +134,10 @@
 }
 
 .site-main {
-    background: #FFFBF2;
-    background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+    background: #f4f1ef;
+	/*
+    background-image:url('../images/ricepaper2.png'); */
+	/* By Atle Mo http://atlemo.com/ */
 }
 
 .nav {
@@ -228,8 +230,8 @@ html {
     height: 100%;
     max-height: 100%;
     font-size: 62.5%;
-    background: #FFFBF2;
-    background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+    background: #f4f1ef; /*
+    background-image:url('../images/ricepaper2.png'); */
 }
 
 body {
@@ -240,8 +242,8 @@ body {
     font-size: 2.0rem;
     line-height: 1.6em;
     color: #3A4145;
-    background: #FFFBF2;
-    background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+    background: #f4f1ef; /*
+    background-image:url('../images/ricepaper2.png'); */
 }
 
 ::-moz-selection {
@@ -612,13 +614,13 @@ margin on the iframe, cause it breaks stuff. */
     border-bottom: #00b8d0 1px solid;
     word-break: break-word;
     hyphens: manual;
-    background: #FFFBF2;
-    background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+    background: #f4f1ef; /*
+    background-image:url('../images/ricepaper2.png'); */
 }
 
 .post-feed {
-    background: #FFFBF2;
-    background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+    background: #f4f1ef; /*
+    background-image:url('../images/ricepaper2.png'); */
 }
 
 /* Add a little circle in the middle of the border-bottom on our .post
@@ -634,8 +636,8 @@ margin on the iframe, cause it breaks stuff. */
     bottom: -5px;
     left: 50%;
     margin-left: -5px;
-    background: #ffb830;
-    background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+    background: #f4f1ef;
+    background-image:url('../images/ricepaper2.png');
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
@@ -837,8 +839,8 @@ a.button:hover {
    ========================================================================== */
 .post-template .site-main,
 .page-template .site-main {
-	background: #FFFBF2;
-	background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+	background: #f4f1ef; /*
+    background-image:url('../images/ricepaper2.png'); */
 }
 
 .post-full-header {
@@ -847,8 +849,8 @@ a.button:hover {
 
 .post-full-content {
     padding: unset;
-	background: #FFFBF2;
-	background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+	background: #f4f1ef; /*
+    background-image:url('../images/ricepaper2.png'); */
 }
 
 
@@ -863,8 +865,8 @@ a.button:hover {
     margin-top: 0;
     border-bottom: none;
     padding-bottom: 0;
-    background: #FFFBF2;
-    background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+    background: #f4f1ef; /*
+    background-image:url('../images/ricepaper2.png'); */
 }
 
 /* Kill that stylish little circle that was on the border, too */
@@ -1020,8 +1022,8 @@ a.button:hover {
     bottom: -5px;
     left: 50%;
     margin-left: -5px;
-    background: #FFFBF2;
-    background-image:url('../images/ricepaper2.png'); /* By Atle Mo http://atlemo.com/ */
+    background: #f4f1ef; /*
+    background-image:url('../images/ricepaper2.png'); */
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
@@ -1317,6 +1319,7 @@ a.button:hover {
     .site-nav-main .site-nav:after {
         background: unset;
     }
+}
 
 @media (max-width: 700px) {
     .site-home-header .site-nav {
@@ -1493,8 +1496,12 @@ a.button:hover {
 /* ---------------------------------------------------------- */
 
 .read-next {
-    border-bottom: unset;
-    background: unset;
+/*	originals
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: color(var(--darkgrey) l(-5%));
+*/
+	background: #f4f1ef; /*
+    background-image:url('../images/ricepaper2.png'); */
 }
 
 .read-next-feed {
@@ -1666,4 +1673,22 @@ a.button:hover {
     border-color: unset;
     color: unset;
     text-decoration: unset;
+}
+
+
+@media (prefers-color-scheme: dark) {
+	.site-main,
+	.outer,
+	html,
+	body,
+	.post-feed,
+	.post-template .site-main,
+	.page-template .site-main,
+	.post-full-content,
+	.post-template .post,
+	.tag-archive-header:after	{
+        color: rgba(255, 255, 255, 0.9);
+        background: var(--darkmode);
+	}
+	
 }
