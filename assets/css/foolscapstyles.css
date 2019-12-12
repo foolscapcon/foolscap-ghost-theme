@@ -171,7 +171,15 @@
 }
 
 /* kludge to fake dynamic vertical expansion when menu items wrap */
-@media (max-width: 740px) {
+
+/* first, kill social media link icons */
+@media (max-width: 750px) {
+	.site-nav-right {
+		display: none;
+	}
+}
+
+@media (max-width: 580px) {
 	.site-nav {
 		height: 94px;
 	}
@@ -184,7 +192,7 @@
 	}
 }
 
-@media (max-width: 450px) {
+@media (max-width: 376px) {
 	.site-nav {
 		height: 128px;
 	}
@@ -197,7 +205,7 @@
 	}
 }
 
-@media (max-width: 345px) {
+@media (max-width: 304px) {
 	.site-nav {
 		height: 160px;
 	}
@@ -572,13 +580,6 @@ margin on the iframe, cause it breaks stuff. */
     width: 100%;
     max-width: 900px;
     margin: 0px auto;
-}
-
-/* This width determined by empirical twiddling. */
-@media (max-width: 860px) {
-	.site-nav-right {
-		display: none;
-	}
 }
 
 /* Centres vertically yo. (IE8+) */
