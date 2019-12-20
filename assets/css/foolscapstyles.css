@@ -1675,21 +1675,3 @@ a.button:hover {
     color: unset;
     text-decoration: unset;
 }
-
-
-@media (prefers-color-scheme: dark) {
-	.site-main,
-	.outer,
-	html,
-	body,
-	.post-feed,
-	.post-template .site-main,
-	.page-template .site-main,
-	.post-full-content,
-	.post-template .post,
-	.tag-archive-header:after	{
-        color: rgba(255, 255, 255, 0.9);
-        background: var(--darkmode);
-	}
-	
-}
