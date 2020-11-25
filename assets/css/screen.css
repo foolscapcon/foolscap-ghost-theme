@@ -604,9 +604,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-image {
     width: 100%;
     height: 200px;
-    background: var(--lightgrey) no-repeat center center;
-
-    object-fit: cover;
+    object-fit: scale-down;
 }
 
 .post-card-content-link {
@@ -679,7 +677,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 100%;
     background: color(var(--lightgrey) l(+10%));
     border-radius: 100%;
-
     object-fit: cover;
 }
 
@@ -2214,8 +2211,7 @@ Usage (In Ghost editor):
     width: 100%;
     height: 100%;
     border-radius: 0 3px 3px 0;
-
-    object-fit: cover;
+    object-fit: scale-down;
 }
 
 .kg-bookmark-metadata {
