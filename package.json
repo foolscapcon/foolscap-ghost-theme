@@ -1,8 +1,7 @@
 {
-  "name": "foolscap-0-2023-254",
-  "version": "0.2023.254",
+  "name": "foolscap-0-2023-255",
+  "version": "0.2023.255",
   "keywords": ["ghost-theme"],
-  "engines": {"ghost-api": "v3"},
   "author": {
     "name": "Foolscap Web Team",
     "email": "it@foolscap.org"
