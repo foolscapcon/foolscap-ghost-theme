@@ -23,7 +23,7 @@
                 <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
             {{/if}}
         </div>
-        {{#if @labs.members}}
+        {{#if @site.members_enabled}}
             <a class="subscribe-button" href="#subscribe">Subscribe</a>
         {{else}}
             <a class="social-link social-link-wb" href="http://eepurl.com/S5m9D" title="email" target="_blank" rel="noopener">{{> "icons/email"}}</a>
